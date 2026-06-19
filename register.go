@@ -2,7 +2,7 @@ package martian
 
 import (
 	"github.com/google/martian/parse"
-	"github.com/velonetics/velonetics-martian/v2/register"
+	"github.com/pucora/velonetics-martian/v2/register"
 )
 
 // Register gets all the modifiers from the velonetics-martian register and registers

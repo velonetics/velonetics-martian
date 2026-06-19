@@ -9,7 +9,7 @@ import (
 	"github.com/google/uuid"
 )
 
-const defaultHeaderName string = "X-Velonetics-Id"
+const defaultHeaderName string = "X-Pucora-Id"
 
 type idModifier struct {
 	header string
@@ -21,8 +21,8 @@ type idModifierJSON struct {
 }
 
 // NewIDModifier returns a request modifier that will set a header with the name
-// X-Velonetics-Id with a value that is a unique identifier for the request. In the case
-// that the X-Velonetics-Id header is already set, the header is unmodified.
+// X-Pucora-Id with a value that is a unique identifier for the request. In the case
+// that the X-Pucora-Id header is already set, the header is unmodified.
 func NewIDModifier(header string) martian.RequestModifier {
 	if header == "" {
 		header = defaultHeaderName
@@ -30,8 +30,8 @@ func NewIDModifier(header string) martian.RequestModifier {
 	return &idModifier{header: header}
 }
 
-// ModifyRequest sets the X-Velonetics-Id header with a unique identifier.  In the case
-// that the X-Velonetics-Id header is already set, the header is unmodified.
+// ModifyRequest sets the X-Pucora-Id header with a unique identifier.  In the case
+// that the X-Pucora-Id header is already set, the header is unmodified.
 func (im *idModifier) ModifyRequest(req *http.Request) error {
 	// Do not rewrite an ID if req already has one
 	if req.Header.Get(im.header) != "" {

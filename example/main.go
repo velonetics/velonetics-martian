@@ -9,19 +9,19 @@ import (
 	"syscall"
 
 	"github.com/gin-gonic/gin"
-	gologging "github.com/velonetics/velonetics-gologging/v2"
-	koanf "github.com/velonetics/velonetics-koanf"
-	martian "github.com/velonetics/velonetics-martian/v2"
-	"github.com/velonetics/lura/v2/proxy"
-	veloneticsgin "github.com/velonetics/lura/v2/router/gin"
-	"github.com/velonetics/lura/v2/transport/http/client"
-	"github.com/velonetics/lura/v2/transport/http/server"
+	gologging "github.com/pucora/velonetics-gologging/v2"
+	koanf "github.com/pucora/velonetics-koanf"
+	martian "github.com/pucora/velonetics-martian/v2"
+	"github.com/pucora/lura/v2/proxy"
+	veloneticsgin "github.com/pucora/lura/v2/router/gin"
+	"github.com/pucora/lura/v2/transport/http/client"
+	"github.com/pucora/lura/v2/transport/http/server"
 )
 
 func main() {
 	port := flag.Int("p", 0, "Port of the service")
 	debug := flag.Bool("d", false, "Enable the debug")
-	configFile := flag.String("c", "/etc/velonetics/configuration.json", "Path to the configuration filename")
+	configFile := flag.String("c", "/etc/pucora/configuration.json", "Path to the configuration filename")
 	flag.Parse()
 
 	parser := koanf.New()

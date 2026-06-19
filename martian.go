@@ -8,10 +8,10 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/velonetics/lura/v2/config"
-	"github.com/velonetics/lura/v2/logging"
-	"github.com/velonetics/lura/v2/proxy"
-	"github.com/velonetics/lura/v2/transport/http/client"
+	"github.com/pucora/lura/v2/config"
+	"github.com/pucora/lura/v2/logging"
+	"github.com/pucora/lura/v2/proxy"
+	"github.com/pucora/lura/v2/transport/http/client"
 
 	// import the required martian packages so they can be used
 	"github.com/google/martian"
@@ -26,7 +26,7 @@ import (
 	_ "github.com/google/martian/querystring"
 	_ "github.com/google/martian/stash"
 	_ "github.com/google/martian/status"
-	"github.com/velonetics/velonetics-martian/v2/header"
+	"github.com/pucora/velonetics-martian/v2/header"
 )
 
 // NewBackendFactory creates a proxy.BackendFactory with the martian request executor wrapping the injected one.
@@ -123,7 +123,7 @@ func modifyResponse(mod martian.ResponseModifier, resp *http.Response) error {
 }
 
 // Namespace is the key to look for extra configuration details
-const Namespace = "github.com/velonetics/velonetics-martian"
+const Namespace = "github.com/pucora/velonetics-martian"
 
 // Result is a simple wrapper over the parse.FromJSON response tuple
 type Result struct {
